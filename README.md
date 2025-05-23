@@ -1,74 +1,86 @@
-# 📊 Planilha de Manutenção Elétrica - Eucatur
+````markdown
+# ⚡ Planilha de Manutenção Elétrica – Eucatur
 
-Este projeto contém um script em Google Apps Script utilizado para organizar visualmente e facilitar a operação de uma planilha de **manutenção elétrica** da empresa de transporte **Eucatur**.
+Este repositório contém um script desenvolvido em **Google Apps Script** para automatizar e facilitar a organização de uma planilha de **manutenção elétrica** da empresa de transporte **Eucatur**. O objetivo é tornar a visualização das ordens de serviço mais clara e eficiente para os eletricistas da equipe.
 
-## 🔧 Objetivo
+---
 
-O objetivo do script é **otimizar o fluxo de trabalho dos eletricistas**, que utilizam a planilha para visualizar e acompanhar os serviços a serem executados, através de uma **interface visual acessível** projetada para uso em um painel físico na área de manutenção.
+## 🎯 Objetivo
+
+O script visa **otimizar o fluxo de trabalho** no setor de manutenção, melhorando a forma como as tarefas são visualizadas e priorizadas. A planilha é exibida em um painel físico e serve como ferramenta de acompanhamento para os serviços executados.
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- ✅ **Destaca em verde** as linhas com **serviços concluídos** (quando preenchido o horário final).
-- 🟧 **Destaca em laranja** as linhas com **serviços em andamento** (com horário inicial, mas sem final).
-- ⬆️ **Move os serviços concluídos para o topo** da planilha, facilitando a visualização do que já foi resolvido.
-- 🔐 Verifica se o usuário tem **permissão de edição** nas células protegidas antes de executar.
-- 🧹 Esconde automaticamente a **coluna auxiliar (Z)** após o uso, mantendo a planilha limpa.
+- ✅ **Realce em verde** para serviços **concluídos** (com horário final preenchido).
+- 🟧 **Realce em laranja** para serviços **em andamento** (com horário inicial, mas sem final).
+- ⬆️ **Reordenação automática** das tarefas concluídas para o topo da planilha.
+- 🔐 **Validação de permissões de edição** antes da execução.
+- 🧹 **Ocultação automática da coluna auxiliar (Z)** ao fim do processo.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🗂 Estrutura do Projeto
 
-📂 planilha-manutencao-eletrica-eucatur/
-├── code.gs # Script principal com lógica de organização e checagem de permissões
-├── README.md # Documentação do projeto
+```plaintext
+planilha-manutencao-eletrica-eucatur/
+├── code.gs         # Script principal em Google Apps Script
+├── README.md       # Documentação do projeto
+````
 
-## 🚀 Como usar
+---
 
-1. Abra a planilha usada pelo setor de manutenção da Eucatur.
-2. No menu da planilha, clique em **"Automação" → "Ordenar e Processar"**.
-3. O script irá:
-   - Verificar se você está na aba correta (`ELETRICA`);
-   - Checar permissões de edição;
-   - Aplicar cores de status (verde/laranja);
-   - Ordenar os serviços resolvidos acima dos pendentes;
-   - Ocultar a coluna auxiliar (Z).
+## 🚀 Como Usar
 
-> ⚠️ Este script **funciona apenas na aba "ELETRICA"** da planilha. Se você tentar executar em outra aba, será exibido um alerta.
+1. Acesse a planilha de manutenção da Eucatur no Google Sheets.
+2. No menu da planilha, clique em **Automação → Ordenar e Processar**.
+3. O script irá executar automaticamente as seguintes etapas:
+
+   * Verificar se a aba ativa é `ELETRICA`;
+   * Validar permissões de edição;
+   * Colorir as linhas conforme o status da tarefa;
+   * Reorganizar os serviços concluídos no topo;
+   * Ocultar a coluna auxiliar (Z) para manter a planilha limpa.
+
+> ⚠️ **Importante**: O script funciona apenas na aba `ELETRICA`. Ao tentar usar em outra aba, um alerta será exibido.
 
 ---
 
 ## 🧠 Tecnologias Utilizadas
 
-- **Google Apps Script** (JavaScript para planilhas do Google)
-- Google Sheets como plataforma de visualização
-- Sistema GLOBUS para alimentação dos dados originais
+* [Google Apps Script](https://developers.google.com/apps-script) (baseado em JavaScript)
+* Google Sheets (como interface de visualização)
+* Sistema GLOBUS (como fonte dos dados originais)
 
 ---
 
-## 🧩 Exemplo Visual
+## 🖼 Exemplo Visual
 
-Abaixo um exemplo da planilha em uso com o script:
+> *Substitua o caminho abaixo pela imagem correta no repositório.*
 
-![Exemplo visual](caminho/para/imagem.png) <!-- substitua pelo caminho correto da imagem no GitHub -->
+![Exemplo da planilha em uso](docs/exemplo_visual.png)
 
 ---
 
-## 📌 Motivação
+## 📌 Contexto e Motivação
 
-O setor de manutenção elétrica da Eucatur recebe ordens de serviço registradas pelo sistema GLOBUS. Os apontadores transcrevem essas informações para a planilha, que é exibida em um painel no setor.  
-Este script automatiza a organização, reduzindo o tempo gasto pelos eletricistas na leitura e localização das tarefas e **aumentando a eficiência visual** do processo.
+As ordens de serviço são emitidas pelo sistema GLOBUS e transcritas para a planilha por apontadores. Esta planilha é exibida em um painel físico no setor elétrico da Eucatur, servindo como base para o dia a dia da equipe.
+O script foi criado para **automatizar a organização**, **reduzir o tempo de leitura** e **melhorar a produtividade** dos eletricistas.
 
 ---
 
 ## 📄 Licença
 
-Este projeto é livre para uso pessoal e educacional. Para uso corporativo ou redistribuição, entre em contato com o autor.
+Este projeto é livre para uso pessoal e educacional.
+Para uso comercial, corporativo ou redistribuição, entre em contato com o autor.
 
 ---
 
 ## 👨‍💻 Autor
 
-Desenvolvido por **Lucas Emanuel Miranda de Oliveira**  
-GitHub: [@noguxibr](https://github.com/noguxibr)
+Desenvolvido por [Lucas Emanuel Miranda de Oliveira](https://github.com/noguxibr)
+
+---
+
+```
