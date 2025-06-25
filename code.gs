@@ -89,3 +89,31 @@ function rangesOverlap(range1, range2) {
 
   return rowsOverlap && colsOverlap;
 }
+
+/**
+ * Ordena automaticamente a aba 'ELETRICA' sempre que for chamado por um trigger.
+ */
+function ordenarAutomaticamente() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('ELETRICA');
+
+  if (!sheet) return;
+
+  const lastRow = sheet.getLastRow();
+  if (lastRow <= 1) return;
+
+  const dataRange = sheet.getRange(2, 1, lastRow - 1, sheet.getLastColumn());
+
+  // Verifica se há proteções e permissões
+  const protections = sheet.getProtections(SpreadsheetApp.ProtectionType.RANGE);
+  for (const protection of protections) {
+    if (rangesOverlap(dataRange, protection.getRange()) && !protection.canEdit()) {
+      // Encerra se não puder editar alguma célula protegida
+      return;
+    }
+  }
+
+  dataRange.sort([{ column: 26, ascending: true }]);
+
+  // Oculta a coluna Z (coluna 26) após ordenação
+  sheet.hideColumns(26, 1);
+}
